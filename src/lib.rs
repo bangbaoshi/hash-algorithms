@@ -206,7 +206,7 @@ mod tests {
 
 
     #[test]
-    fn test_additive_hash() {
+    fn main() {
         let hello = "hello";
         println!("additive_hash {}", additive_hash(hello, 131));
         println!("rotating_hash {}", rotating_hash(hello, 131));
@@ -222,16 +222,5 @@ mod tests {
         println!("djb_hash {}", dek_hash(hello));
         println!("ap_hash: {}", ap_hash(hello));
         println!("java_hash {}", java_hash(hello));
-
-
-        println!("{}", !31);
-
-
-        let welcome = "hello";
-        let bytes= welcome.as_bytes();
-        println!("{}", bytes.len());
-        for v in bytes {
-            println!("{}", *v);
-        }
     }
 }
