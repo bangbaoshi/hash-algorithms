@@ -7,9 +7,9 @@ keywords = ["hash", "algorithms"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 
-documentation = "https://github.com:bangbaoshi/hash-algorithms"
-homepage = "https://github.com:bangbaoshi/hash-algorithms"
-repository = "https://github.com:bangbaoshi/hash-algorithms"
+documentation = "https://github.com/bangbaoshi/hash-algorithms"
+homepage = "https://github.com/bangbaoshi/hash-algorithms"
+repository = "https://github.com/bangbaoshi/hash-algorithms"
 
 license = "MIT"
 description = "Hash, generally translated as hash, hash, or transliterated as hash, is to transform any length of input (also known as pre image) into fixed length output through hash algorithm, and the output is the hash value. This transformation is a kind of compression mapping, that is, the space of hash value is usually much smaller than the space of input, different inputs may hash into the same output, so it is impossible to determine the unique input value from hash value. In short, it is a function that compresses messages of any length to a message digest of a fixed length."
