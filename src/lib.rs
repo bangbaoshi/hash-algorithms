@@ -1,3 +1,5 @@
+use std::num::Wrapping;
+
 static M_MASK: i64 = 0x8765fed1;
 static M_SHIFT: i64 = 0;
 
@@ -186,11 +188,13 @@ pub fn ap_hash(key: &str) -> i64 {
     return hash;
 }
 
-pub fn java_hash(key: &str) -> i64 {
+pub fn java_hash(key: &str) -> i32 {
     let mut hash = 0;
     let bytes = key.as_bytes();
+    let wrapping_times: Wrapping<i32> = Wrapping(31);
     for v in bytes {
-        hash = 31 * hash + (*v as i64);
+        let hash_wrapper: Wrapping<i32> = Wrapping(hash);
+        hash = (wrapping_times * hash_wrapper).0 + (*v as i32);
     }
     return hash;
 }
@@ -202,6 +206,11 @@ mod tests {
     #[test]
     fn it_works() {
         assert_eq!(2 + 2, 4);
+    }
+
+    #[test]
+    fn test_java_hash_uuid() {
+        assert_eq!(-684667921, java_hash("57d62a420dd245d6a8005628282d8737"))
     }
 
 
